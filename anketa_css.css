@@ -17,12 +17,12 @@ button {
   padding: 10px 42px;
   border-radius: 50px;
   outline: none;
-  transition: 0.4s;
+  transition: 0.2s;
   text-transform: uppercase;
 }
 button:hover {
   background: rgba(148, 148, 148, 0.8);
 }
 button:active {
-  background: white;
+  background:white;
 }
