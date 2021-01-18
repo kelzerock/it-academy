@@ -19,10 +19,10 @@ ages = Number(ages)
       }
 var gender = confirm('Если вы мужского пола нажмите "OK", если женского - то нажмите "Отмена" или клавишу "esc"');
 var genderName = gender? 'мужской': 'женский';
-var pensia
-    if (gender)
-    {ages >65? pensia = 'да' :  pensia = 'нет'}
-    else {ages >60?  pensia = 'да' :  pensia = 'нет'}
+var pensia 
+
+if(gender) {pensia = ages > 65? 'да' : 'нет'}
+    else { pensia = ages >60?  'да' : 'нет'}
 alert(
 'ваше ФИО: '+ lastName + ' ' + firstName + ' ' + otchestvo + 
 '\n ваш возраст в годах: ' + ages +
