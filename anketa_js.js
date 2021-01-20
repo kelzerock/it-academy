@@ -31,3 +31,18 @@ alert(
 '\n ваш пол: ' + genderName +
 '\n вы на пенсии: ' + pensia)
 }
+
+function question(){
+  let str = prompt('Введите любую строку!');
+  clearString(str)
+}
+
+function clearString(x){
+  while (x[0] == ' ') {
+    x = x.replace(x[0], '') 
+   }
+   while (x[x.length-1] == ' ') {
+     x = x.replace(x[x.length-1],'')
+   }
+   return console.log('>' + x + '<')
+}
