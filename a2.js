@@ -1,6 +1,6 @@
 
 function question(){
-  let str = clearString(prompt('Введите любую строку!');
+  let str = clearString(prompt('Введите любую строку!')) ;
   
 }
 
