@@ -1,7 +1,7 @@
 
 function question(){
   let str = clearString(prompt('Введите любую строку!')) ;
-  
+  console.log('>' + str + '<')
 }
 
 function clearString(x){
@@ -17,6 +17,6 @@ function clearString(x){
   }
   return x = x.slice(leftSpace,x.length-rightSpace)
 } 
-console.log('>' + str + '<')
+
 
 
