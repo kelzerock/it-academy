@@ -15,6 +15,8 @@ function clearString(x){
     rightSpace = y;
     console.log(y)
   }
-  return console.log('>' + x.slice(leftSpace,x.length-rightSpace) + '<')
-}
+  return x = x.slice(leftSpace,x.length-rightSpace)
+} 
+console.log('>' + str + '<')
+
 
