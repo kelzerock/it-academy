@@ -1,7 +1,7 @@
 
 function question(){
-  let str = prompt('Введите любую строку!');
-  clearString(str);
+  let str = clearString(prompt('Введите любую строку!');
+  
 }
 
 function clearString(x){
