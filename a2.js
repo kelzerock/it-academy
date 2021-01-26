@@ -1,7 +1,9 @@
 
 function question(){
-  let str = clearString(prompt('Введите любую строку!')) ;
-  console.log('>' + str + '<')
+  let str = prompt('Введите любую строку!');
+  console.log('Ваша введенная строка: "' +str+'"')
+  
+  console.log('Результат: >' + clearString(str) + '<')
 }
 
 function clearString(x){
@@ -10,7 +12,7 @@ function clearString(x){
   let i = 0;
   let y = 0;
     if(x[i] != ' ' && x[x.length-1] != ' ') { //проверка, если пробелов нет в начале и конце строки - возвращаем 'x'
-      console.log('Пробелов нет');
+      console.log('Пробелов в начале и конце строки - нет!');
       return x;
     }
 
@@ -19,11 +21,9 @@ function clearString(x){
     leftSpace = i;
     }
     if(i==x.length) {
-      console.log('сработал только 1 цикл - строка из пробелов'); // если строка состоит только из пробелов 2-ой цикл даже не запускаем.
+      console.log('Строка состоит из одних пробелов (сработал только один цикл)!'); // если строка состоит только из пробелов 2-ой цикл даже не запускаем.
       return x='';
-    } else {
-      console.log('продолжаем работу')
-    }
+    } 
 
     while((x[x.length-y-1] == ' ') && (y < x.length)) {
     ++y;

@@ -1,5 +1,5 @@
 "use strict"
-
+function startTreeSum(){
 //согласно условиям задачи перед нами либо числа, либо массивы из чисел поэтому функции по преобразованию данных в числа не использовались.
 
 function treeSum(massiv){
@@ -12,10 +12,13 @@ function treeSum(massiv){
     }
 return totalSumm //возвращаем итог
 }
+
+
 let nn = [ 5, 7, 
   [ 4, [2], 8, [1,3], 2 ], 
   [ 9, [] ], 
   1, 8
 ]
 
-console.log(treeSum(nn)) 
+console.log('сумма элементов массива составляет: ' +treeSum(nn)) 
+}
