@@ -18,4 +18,4 @@ let nn = [ 5, 7,
   1, 8
 ]
 treeSum(nn)
-
+console.log(nn) 
