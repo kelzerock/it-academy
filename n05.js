@@ -17,5 +17,5 @@ let nn = [ 5, 7,
   [ 9, [] ], 
   1, 8
 ]
-treeSum(nn)
-console.log(nn) 
+
+console.log(treeSum(nn)) 
