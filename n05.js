@@ -7,9 +7,8 @@ function treeSum(massiv){
     for (var i = 0; i < massiv.length; i++) { //цикл по каждому елементу массива
       if (Array.isArray(massiv[i])) { //определяем перед нами массив или нет
       totalSumm+= treeSum(massiv[i]); //если перед нами массив запускаем в нее дальше нашу фунцию пока она не достигнет чисел
-      console.log(totalSumm);
       } else { totalSumm += massiv[i]; //если перед нами не массив суммируем это число в переменную totalSumm
-      console.log(totalSumm); }
+      }
     }
 return totalSumm //возвращаем итог
 }
