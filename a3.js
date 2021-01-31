@@ -8,7 +8,7 @@ function palindromeStart(){
   let request=prompt('Попробуйте себя в написаниии палиндромы!')
   if (request == null) {request = 'Тут могла быть строка придуманная вами!'}
   console.log('Ваша введенная строка: "' +request+'"')
-  palindrome(request);
+  console.log(palindrome(request));
 }
 
 function palindrome(str){  
