@@ -9,7 +9,7 @@ function palindromeStart(){
   if (request == null) {request = 'Тут могла быть строка придуманная вами!'}
   console.log('Ваша введенная строка: "' +request+'"')
 }
- 
+palindrome(request);
 function palindrome(str){  
 str = str.toLowerCase();//приводим все к нижнему регистру
 while(str.includes('ё')==true) {str = str.replace('ё','е')};//циклом заменяем "ё" на "е" для исключения ошибок в будущих проверках
