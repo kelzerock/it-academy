@@ -31,6 +31,7 @@ while(globalA+globalB<str.length) {//цикл по проверке букв п�
     break;}
 }
 if (result == 0) {true} else {false}
+return result;
 
 function selection(str){//фунция по отбору нужных символов - буквы русского алфавита
 let massive = {'а': true, 'б': true, 'в': true,'г': true,'д': true,'е': true,'ж': true,'з': true,'и': true,'й': true,'к': true,'л': true,'м': true,'н': true,'о': true,'п': true,'р': true,'с': true,'т': true,'у': true,'ф': true,'х': true,'ц': true,'ч': true,'ш': true,'щ': true,'ы': true,'э': true,'ю': true,'я': true,};
