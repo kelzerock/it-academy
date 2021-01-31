@@ -37,23 +37,36 @@ function solve(s){
   return  final
 }
 
-//   s[i] == s[i].charCodeAt();
-//   if (s[i].charCodeAt() == 97) {
-//   s[i] == String.fromCharCode(s[i].charCodeAt()+1)
-//   } else {
-//     if (s[i].charCodeAt() == 122) {
-//   s[i] == String.fromCharCode(s[i].charCodeAt()-1)
-//   } else {s[i] == String.fromCharCode(s[i].charCodeAt()-1 || s[i].charCodeAt()+1) }
-//   }
-//   }
-// console.log(s)
-let s = 'bcd'
-for (let i = 0; i<s.length; i++) {
-if (Math.random>0.5) {
-  s += String.fromCharCode(s[i].charCodeAt()+1);
-  console.log(s[i])
-} else {
-  s += String.fromCharCode(s[i].charCodeAt()-1);
-  console.log(s[i])
+let a = 'zaz';
+solve(a);
+function solve(s){
+  s = s.toLowerCase();
+  let result ="";
+  let y = 1;
+  let final = 0;
+  
+  for(let x = 0 ; x+y<s.length; x++){
+  if (s[x] == s[s.length-y]) {
+  y++ ;
+  } else {final++}
+  }
+  if(final == 0) {final = true} else{ final = false}
+  return  final
 }
+
+// Difference of Volumes of Cuboids
+function findDifference(a, b) {
+let summA = 1;
+let summB = 1;
+for(let i = 0; i<a.length; i++){
+  summA *= a[i];
+}
+for(let x = 0; x<b.length; x++){
+  summB *= b[x];
+}
+let result;
+if(summA>summB){
+  result=summA-summB
+} else {result = summB - summA}
+return result
 }
