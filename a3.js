@@ -24,10 +24,10 @@ for(let i = 0; i<str.length;i++) {
 }
 for(let x = 0; x*2<newStr.length; x++) {
 if (newStr[x]==newStr[newStr.length-1-x]) {
-  result = true
-} else {result = false}
+  
+} else {return false}
 }
-return result
+return true
 }
 
 // while(str.includes('ё')==true) {str = str.replace('ё','е')};//циклом заменяем "ё" на "е" для исключения ошибок в будущих проверках

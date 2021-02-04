@@ -78,3 +78,43 @@ for(let i = 0; i<n; i++) {
 
 }
 }
+// Create palindrome
+function solve(s){
+  s = s.toLowerCase();
+  let result;
+  for(let i = 0; i*2<s.length; i++) {
+ if(
+    ((s[i].charCodeAt()-1 == s[s.length-1-i].charCodeAt()+1) && (s[i].charCodeAt()-1 != (96 && 122))) ||
+    ((s[i].charCodeAt()-1 == s[s.length-1-i].charCodeAt()-1) && (s[i].charCodeAt()-1 != (96 && 122))) ||
+    ((s[i].charCodeAt()+1 == s[s.length-1-i].charCodeAt()+1) && (s[i].charCodeAt()+1 != (96 && 122))) ||
+    ((s[i].charCodeAt()+1 == s[s.length-1-i].charCodeAt()-1) && (s[i].charCodeAt()+1 != (96 && 122))) 
+    )
+    {   } else {return false}
+   }
+ 
+   return true;
+ }
+
+
+  //  if(((s[i].charCodeAt()-1 == s[s.length-1-i].charCodeAt()+1) && 
+  //           ((s[i].charCodeAt()-1)>=97) && 
+  //           ((s[i].charCodeAt()-1)<=122) && 
+  //           ((s[s.length-1-i].charCodeAt()+1)>=97) &&
+  //           ((s[s.length-1-i].charCodeAt()+1)<=122)  || 
+  //       ((s[i].charCodeAt()-1 == s[s.length-1-i].charCodeAt()-1) &&  
+  //           ((s[i].charCodeAt()-1)>=97) && 
+  //           ((s[i].charCodeAt()-1)<=122) && 
+  //           ((s[s.length-1-i].charCodeAt()-1)>=97) &&
+  //           ((s[s.length-1-i].charCodeAt()-1)<=122))   ||
+  //       ((s[i].charCodeAt()+1 == s[s.length-1-i].charCodeAt()+1) &&
+  //           ((s[i].charCodeAt()+1)>=97) && 
+  //           ((s[i].charCodeAt()+1)<=122) && 
+  //           ((s[s.length-1-i].charCodeAt()+1)>=97) &&
+  //           ((s[s.length-1-i].charCodeAt()+1)<=122))   ||
+  //       ((s[i].charCodeAt()+1 == s[s.length-1-i].charCodeAt()-1) &&
+  //           ((s[i].charCodeAt()+1)>=97) && 
+  //           ((s[i].charCodeAt()+1)<=122) && 
+  //           ((s[s.length-1-i].charCodeAt()-1)>=97) &&
+  //           ((s[s.length-1-i].charCodeAt()-1)<=122))  
+  //     ))
+
