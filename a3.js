@@ -22,7 +22,7 @@ for(let i = 0; i<str.length;i++) {
     newStr +='е';
 }
 }
-for(let x = 0; x*2<newStr.length; x++) {
+for(let x = 0; x*2+newStr.length%2<newStr.length; x++) {
 if (newStr[x]==newStr[newStr.length-1-x]) {
   
 } else {return false}
