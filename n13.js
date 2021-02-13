@@ -1,25 +1,24 @@
 "use strict"
 
-function HashStorageFunc(key, value){
+function HashStorageFunc(){
   var self = this;
+  self.storage ={}
   self.addValue = function(key,value){
-    self[key]=value;
+    self.storage[key]=value;
   }
-  self.getValue = function(key){
-    if(key in self) {
-      console.log(self[key])
-    } else {undefined}
 
-  }
+  self.getValue = function(key){
+      return self.storage[key]
+   }
   self.deleteValue = function(key){ 
-   if (key in self){
-     delete self[key];
+   if (key in self.storage){
+     delete self.storage[key];
      return true
    } else {return false}
   }
 
   self.getKeys = function(){
-    return Object.keys(self);
+    return Object.keys(self.storage);
   }
 }
 var drinkStorage = new HashStorageFunc();

@@ -97,3 +97,67 @@ function solve(s){
  }
 
 
+var isAnagram = function (test, original) {
+  if (test.length != original.length) {
+    return false
+  }
+  test = test.toLowerCase();
+  original = original.toLowerCase();
+  test = test.split('');
+original = original.split('');
+
+function ss(a,b){
+  if(b<a) return -1;
+  if(b>a) return 1;
+  return 0
+}
+
+test.sort(ss);
+original.sort(ss);
+for(let i=0; i<test.length; i++){
+if(test[i] != original[i]){
+  return false
+} 
+
+  }
+ }
+
+function mygcd(x, y) {
+  let count = 1;
+
+  nextDown(x, y)
+
+  function nextDown(x, y) {
+    for (let i = Math.min(x, y); i > 1; i--) {
+      if (x % i == 0 && y % i == 0) {
+        count *= i;
+        x = x / i;
+        y = y / i;
+        nextDown(x,y)
+        console.log(i + 'yes')
+      } else{console.log(x+'|'+y+"|"+i)}
+    }
+   
+  }
+ return count
+}
+function mygcd(x, y) {
+  let count = 1;
+  nextDown(x, y)
+
+  function nextDown(x, y) {
+    for (let i = 2; i < Math.min(x, y); i++) {
+      if (x % i == 0 && y % i == 0) {
+        console.log(x + '|' + y + '|' + i)
+        console.log(count)
+        count *= i;
+        x = x / i;
+        y = y / i;
+        console.log(x + '|' + y + '|' + i)
+        console.log(count)
+        nextDown(x, y)
+      }
+    }
+  }
+  return count
+}
