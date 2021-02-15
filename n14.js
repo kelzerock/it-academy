@@ -18,7 +18,7 @@ if (key in this.storage){
 }
 
 getKeys(){
-return Object.keys(self.storage);
+return Object.keys(this.storage);
 }
 }
 
