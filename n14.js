@@ -1,33 +1,33 @@
 "use strict"
 
-function HashStorageFunc(){
-  var self = this;
-  self.storage ={}
-  self.addValue = function(key,value){
-    self.storage[key]=value;
+class HashStorageFuncES {
+  constructor() {
+    this.storage = {};
   }
-
-  self.getValue = function(key){
-      return self.storage[key]
-   }
-  self.deleteValue = function(key){ 
-   if (key in self.storage){
-     delete self.storage[key];
-     return true
-   } else {return false}
-  }
-
-  self.getKeys = function(){
-    return Object.keys(self.storage);
-  }
+addValue(key, value){
+  this.storage[key] = value;
 }
-var drinkStorage = new HashStorageFunc();
-drinkStorage.addValue('Лимонад',[false, 'Вода, лимон и мята', 5]);
-drinkStorage.addValue('Май Тай',[true, 'светлый и темный ром, миндальный сироп, лед', 20]);
-drinkStorage.addValue('Мимоза',[true, 'Шампанское, апельсиновый сок, долька апельсина', 14]);
+getValue(key){
+  return this.storage[key]
+}
+deleteValue(key){ 
+if (key in this.storage){
+ delete this.storage[key];
+ return true
+} else {return false}
+}
 
+getKeys(){
+return Object.keys(self.storage);
+}
+}
 
-function addAlco() {
+var drinkStorageES6 = new HashStorageFuncES();
+drinkStorageES6.addValue('Лимонад',[false, 'Вода, лимон и мята', 5]);
+drinkStorageES6.addValue('Май Тай',[true, 'светлый и темный ром, миндальный сироп, лед', 20]);
+drinkStorageES6.addValue('Мимоза',[true, 'Шампанское, апельсиновый сок, долька апельсина', 14]);
+
+function addAlcoES() {
   let nameAlco = prompt('Введите название напитка');
   if(nameAlco === null){return}
   let alco = confirm('Данный напиток алкогольный? Если "Да" нажмите "ОК".');
@@ -37,11 +37,11 @@ function addAlco() {
   while (Boolean(price) == false || price < 0) {
     price = parseFloat(prompt('Введите цену напитка!'))
   };
-  drinkStorage.addValue(nameAlco, [alco, recipe, price])
+  drinkStorageES6.addValue(nameAlco, [alco, recipe, price])
 }
-function getAlcoValue() {
+function getAlcoValueES6() {
   let nameAlco = prompt('Введите название напитка')
-  let valueAlco = drinkStorage.getValue(nameAlco);
+  let valueAlco = drinkStorageES6.getValue(nameAlco);
   if (valueAlco == undefined) {
     alert("Отсутствует информация о данном напитке")
   } else {
@@ -51,16 +51,17 @@ function getAlcoValue() {
       + "Цена напитка: " + valueAlco[2] + " руб.")
   }
 }
-function deleteAlco() {
+function deleteAlcoES6() {
   let nameAlco = prompt('Введите название напитка');
-  let alco = drinkStorage.deleteValue(nameAlco);
+  let alco = drinkStorageES6.deleteValue(nameAlco);
   alco ? alert('Напиток "' + nameAlco + '" удален из базы данных') : alert('Такого напитка нет в базе данных!');
 }
-function listAlco() {
-  let arrAlco = drinkStorage.getKeys();
+function listAlcoES6() {
+  let arrAlco = drinkStorageES6.getKeys();
   let strList = '';
   for (let i = 0; i < arrAlco.length; i++) {
     strList += (i + 1) + ') ' + arrAlco[i] + ';\n'
   }
   return alert(strList.slice(0, strList.length))
 }
+
