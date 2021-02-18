@@ -8,7 +8,7 @@ function palindromeRecursion(str) {
   let newStr = '';
   for (let i = 0; i < str.length; i++) {
     if (str[i] >= 'а' && str[i] <= 'я') {
-      newStr += str[i]
+      str[i]=='ъ'||'ь'?newStr : newStr += str[i]
     } else if (str[i] == 'ё') {
       newStr += 'е'
     }
