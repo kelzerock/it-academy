@@ -161,3 +161,29 @@ function mygcd(x, y) {
   }
   return count
 }
+
+function mygcd(x, y) {
+  let count = 1;
+  deep(x,y)
+  function deep(x, y) {
+    let i = 2;
+    if (x % i == 0 && y % i == 0) {
+      if (i < Math.min(x, y)) {
+        count *= i;
+        console.log(true + 'i:' + i)
+        x = x / i;
+        y = y / i;
+        deep(x, y)
+      } else { 
+        console.log('i > x||y - return, i='+ i)
+        return count }
+    } else {
+      i++;
+      console.log(false + 'i:' + i)
+      deep(x, y)
+    }
+
+  }
+
+  return count
+}
