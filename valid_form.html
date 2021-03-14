@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="valid_form.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="mainblock">
+    <form action="https://fe.it-academy.by/TestForm.php">
+       <span>Разработчики:</span> <input type="text" name="developer"><br>
+      <span>Название сайта: </span><input type="text" name="namesite"><br>
+      <span>URL сайта:</span><input type="text" name="URLadress"><br>
+      <span>Дата запуска сайта: </span><input type="text" name="datebegin"><br>
+      <span>Посетителей в сутки: </span><input type="text" name="usercoun"><br>
+      <span>E-mail для связи: </span>  <input type="text" name="mail"><br>
+      <span>Рубрика каталога: </span>
+      <select name="catalog" id="rubrics">
+          <option value="1">Здоровье</option>
+          <option value="2">Домашний уют</option>
+          <option value="3">Бытовая техника</option>
+        </select> <br>
+      
+        <div class="fix">Размещение: </div>
+      <div class="inputradio"><input type="radio" class="untouch"name="placing1" id=""><span>бесплатное</span>
+        <input type="radio" class="untouch"name="placing2" id=""><span>платное</span>
+        <input type="radio" class="untouch"name="placing3" id=""><span>VIP</span></div><br>
+      <span>Разрешить отзывы: </span><input type="checkbox" name="review" id="reviewID"><br>
+      <span>Описание сайта: </span><br>
+ <textarea name="description" id="" cols="30" rows="10"></textarea><br>
+      <input class="untouch" type="submit" value="Опубликовать">
+     
+    </form>
+  </div>
+</body>
+
+</html>
