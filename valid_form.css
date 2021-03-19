@@ -1,0 +1,40 @@
+body{
+  background-color: darkgrey;
+}
+
+.mainblock {
+  background-color: cornsilk;
+  max-width: 600px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 15px;
+  position: relative;
+
+}
+input {
+  height: 10px;
+  position: absolute;
+  left: 200px;
+  
+  }
+
+.untouch {
+  position: relative;
+  height: auto;
+  margin: 0;
+  left: auto;
+}
+
+select {
+  height: 20px;
+  position: absolute;
+  left: 200px;
+}
+.inputradio {
+
+
+margin-left: 185px;
+}
+.fix {
+  float: left;
+}
