@@ -13,7 +13,7 @@ body {
   background-color:rgb(233, 233, 233);
 }
 .clock {
-  width: 200px;
+  min-width: 200px;
   height: 200px;
   border: solid black 2px;
   margin: 0 auto;
