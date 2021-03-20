@@ -43,8 +43,31 @@ function creatClock() {
   timezone.className = `timezone`;
   timezone.style.cssText = `width: 50%; height: 20%; position: absolute; top: 20%; left: 25%; display: flex; justify-content: center; align-items: flex-end`;
   clock_div.append(timezone);
+  // данные для расчета первоначального положения стрелок
+  let justNow=new Date()
+  let secData = justNow.getSeconds()* 6;
+  let minData = (justNow.getMinutes()*60 + justNow.getSeconds())/10;
+  let hourData;
+  if (justNow.getHours() > 12) {
+    hourData = (justNow.getHours()-12)*30+minData/12;
+  }else{hourData = justNow.getHours()*30+minData/12}
+ //часовая стрелка
+ let hourLine = document.createElement('div')
+ hourLine.className = `hourLine`;
+ hourLine.style.cssText = `width: 4%; height: 25%; background-color: black; border-radius: 5px; position: absolute; top: calc(25% + 10px); left: 48%; transform: rotate(${hourData}deg); transform-origin: 50% calc(100% - 10px);`;
+ clock_div.append(hourLine)
 
+ //минутная стрелка
+ let minuteLine = document.createElement('div')
+ minuteLine.className = `minuteLine`;
+ minuteLine.style.cssText = `width: 2%; height: 35%; background-color: black; border-radius: 3px; position: absolute; top: calc(15% + 10px); left: 49%;transform: rotate(${minData}deg); transform-origin: 50% calc(100% - 10px)`
+  clock_div.append(minuteLine)
 
+ //секундная стрелка
+ let secLine = document.createElement('div')
+ secLine.className = `secLine`;
+ secLine.style.cssText = `width: 1%; height: 50%; background-color: black; border-radius: 2px; position: absolute; top: calc(0% + 10px); left: 49.5%; transform-origin: 50% calc(100% - 10px);transform: rotate(${secData}deg); `
+ clock_div.append(secLine)
   //функция для обновления времени и положения стрелок(вычисляется по формуле)
  
   setInterval(updateTime, 1000);
@@ -85,32 +108,6 @@ function creatClock() {
     while (strVal.length < len)
       strVal = '0' + strVal;
     return strVal;
-  }
-  
-  let justNow=new Date()
-  let secData = justNow.getSeconds()* 6;
-  let minData = (justNow.getMinutes()*60 + justNow.getSeconds())/10;
-  let hourData;
-  if (justNow.getHours() > 12) {
-    hourData = (justNow.getHours()-12)*30+minData/12;
-  }else{hourData = justNow.getHours()*30+minData/12}
-    
- //часовая стрелка
- let hourLine = document.createElement('div')
- hourLine.className = `hourLine`;
- hourLine.style.cssText = `width: 4%; height: 25%; background-color: black; border-radius: 5px; position: absolute; top: calc(25% + 10px); left: 48%; transform: rotate(${hourData}deg); transform-origin: 50% calc(100% - 10px);`;
- clock_div.append(hourLine)
-
- //минутная стрелка
- let minuteLine = document.createElement('div')
- minuteLine.className = `minuteLine`;
- minuteLine.style.cssText = `width: 2%; height: 35%; background-color: black; border-radius: 3px; position: absolute; top: calc(15% + 10px); left: 49%;transform: rotate(${minData}deg); transform-origin: 50% calc(100% - 10px)`
-  clock_div.append(minuteLine)
-
- //секундная стрелка
- let secLine = document.createElement('div')
- secLine.className = `secLine`;
- secLine.style.cssText = `width: 1%; height: 50%; background-color: black; border-radius: 2px; position: absolute; top: calc(0% + 10px); left: 49.5%; transform-origin: 50% calc(100% - 10px);transform: rotate(${secData}deg); `
- clock_div.append(secLine)
+ }
 }
 
