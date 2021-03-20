@@ -24,7 +24,9 @@ function creatClock() {
     let integers = document.createElement('div');
     integers.className = `integers`;
     integers.style.cssText = `width: 100%; height: 20%; background-color: #48b382; position: absolute; top: 5%;left: 0%; border-radius: 50%; text-align: center;transform: rotate(${rotateIntegers + 'deg'}); display: flex; justify-content: center; align-items: center`;
-    integers.innerHTML = `${i}`;
+    let x;
+    if(i===0){x = 12}else{x = i}
+    integers.innerHTML = `${x}`;
     arr[i].append(integers);
     rotateIntegers -= 30;
   }
@@ -34,23 +36,7 @@ function creatClock() {
   center.style.cssText = `width: 1px; height: 1px; background-color: red; border-radius: 50%; position: absolute; top: 50%; left: 50%; z-index: 5; `
   clock_div.append(center)
 
-  //часовая стрелка
-  let hourLine = document.createElement('div')
-  hourLine.className = `hourLine`;
-  hourLine.style.cssText = `width: 4%; height: 25%; background-color: black; border-radius: 5px; position: absolute; top: calc(25% + 10px); left: 48%; transform: rotate(0deg); transform-origin: 50% calc(100% - 10px) `
-  clock_div.append(hourLine)
-
-  //минутная стрелка
-  let minuteLine = document.createElement('div')
-  minuteLine.className = `minuteLine`;
-  minuteLine.style.cssText = `width: 2%; height: 35%; background-color: black; border-radius: 3px; position: absolute; top: calc(15% + 10px); left: 49%;transform: rotate(0deg); transform-origin: 50% calc(100% - 10px)`
-  clock_div.append(minuteLine)
-
-  //секундная стрелка
-  let secLine = document.createElement('div')
-  secLine.className = `secLine`;
-  secLine.style.cssText = `width: 1%; height: 50%; background-color: black; border-radius: 2px; position: absolute; top: calc(0% + 10px); left: 49.5%; transform: rotate(0deg); transform-origin: 50% calc(100% - 10px);`
-  clock_div.append(secLine)
+ 
 
   // меню времени
   let timezone = document.createElement('div')
@@ -60,12 +46,11 @@ function creatClock() {
 
 
   //функция для обновления времени и положения стрелок(вычисляется по формуле)
-  let secData;
+ 
   setInterval(updateTime, 1000);
   function updateTime() {
     var currTime = new Date();
     var currTimeStr = formatDateTime(currTime);
-    // console.log("🚀 ~ file: js.js ~ line 62 ~ updateTime ~ currTimeStr", currTimeStr)
     timezone.innerHTML = currTimeStr;
     //положение секундной стрелки
     document.querySelector('.secLine').style.transform = 'rotate(' + currTimeStr.slice(6, 8) * 6 + 'deg)';
@@ -101,6 +86,31 @@ function creatClock() {
       strVal = '0' + strVal;
     return strVal;
   }
+  
+  let justNow=new Date()
+  let secData = justNow.getSeconds()* 6;
+  let minData = (justNow.getMinutes()*60 + justNow.getSeconds())/10;
+  let hourData;
+  if (justNow.getHours() > 12) {
+    hourData = (justNow.getHours()-12)*30+minData/12;
+  }else{hourData = justNow.getHours()*30+minData/12}
+    
+ //часовая стрелка
+ let hourLine = document.createElement('div')
+ hourLine.className = `hourLine`;
+ hourLine.style.cssText = `width: 4%; height: 25%; background-color: black; border-radius: 5px; position: absolute; top: calc(25% + 10px); left: 48%; transform: rotate(${hourData}deg); transform-origin: 50% calc(100% - 10px);`;
+ clock_div.append(hourLine)
 
+ //минутная стрелка
+ let minuteLine = document.createElement('div')
+ minuteLine.className = `minuteLine`;
+ minuteLine.style.cssText = `width: 2%; height: 35%; background-color: black; border-radius: 3px; position: absolute; top: calc(15% + 10px); left: 49%;transform: rotate(${minData}deg); transform-origin: 50% calc(100% - 10px)`
+  clock_div.append(minuteLine)
+
+ //секундная стрелка
+ let secLine = document.createElement('div')
+ secLine.className = `secLine`;
+ secLine.style.cssText = `width: 1%; height: 50%; background-color: black; border-radius: 2px; position: absolute; top: calc(0% + 10px); left: 49.5%; transform-origin: 50% calc(100% - 10px);transform: rotate(${secData}deg); `
+ clock_div.append(secLine)
 }
 
