@@ -1,0 +1,31 @@
+
+.div_bg {
+  background-color: rgb(192, 192, 192);
+  width: 60%;
+ height: 500px;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ justify-content:center;
+ align-items: center;
+}
+body {
+  margin: 0;
+  background-color:rgb(233, 233, 233);
+}
+.clock {
+  width: 300px;
+  min-width: 200px;
+  height: 300px;
+  border: solid black 2px;
+  margin: 0 auto;
+}
+.clock_canvas {
+  width: 200;
+  height: 200;
+}
+button {
+  width: 200px;
+  height: 40px;
+
+}

@@ -43,6 +43,7 @@ function creatClock() {
   timezone.className = `timezone`;
   timezone.style.cssText = `width: 50%; height: 20%; position: absolute; top: 20%; left: 25%; display: flex; justify-content: center; align-items: flex-end`;
   clock_div.append(timezone);
+  
   // данные для расчета первоначального положения стрелок
   let justNow=new Date()
   let secData = justNow.getSeconds()* 6;
