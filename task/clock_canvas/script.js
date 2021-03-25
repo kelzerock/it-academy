@@ -77,6 +77,11 @@ function creatClockCanvas() {
       }
       ctx.textAlign = 'center'
     }
+//
+    ctx.textAlign='center';
+    ctx.font = 'normal 24px Arial';
+    ctx.fillText(currTimeStr,RADIUS,RADIUS-RADIUS*1/5 );
+
 //рисуем стрелки
     ctx.save();
     ctx.translate(RADIUS, RADIUS);
